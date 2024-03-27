@@ -1,0 +1,57 @@
+.title-text {
+  color: #2E266F !important;
+  font-size: 80px;
+  font-weight: 500px;
+}
+.input-box {
+  background-color: #F6F5F4;
+  color: #B6B6B6;
+  width: 710px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-right: 23px;
+  padding-left: 70px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.input-box:focus {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-right: 21px;
+  padding-left: 68px;
+  border: #EFC81A solid 2px;
+  color: #6b6b6b;
+}
+.input-box::placeholder {
+  color: #B6B6B6;
+}
+.search-icon {
+  position: absolute;
+  color: #B6B6B6;
+  top: 27px;
+  left: 39px;
+}
+
+@media (max-width: 768px) {
+  .title-text {
+    margin-top: 50px;
+    font-size: 45px;
+  }
+  .input-box {
+    width: 100%;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-right: 23px;
+    padding-left: 70px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  .search-icon {
+    top: 27px;
+    left: 25px;
+  }
+}
+

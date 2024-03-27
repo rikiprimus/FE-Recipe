@@ -1,0 +1,26 @@
+.navbar-profile {
+  color: #3F3A3A;
+  font-weight: 500;
+  text-decoration: none;
+  opacity: 0.5;
+}
+.navbar-profile.active-link{
+  opacity: 1;
+}
+.line-nav {
+  border-top: #EFC81A solid 10px;
+  width: 560px;
+}
+.gap-100px {
+  gap: 100px;
+}
+
+@media (max-width: 768px) {
+  .line-nav {
+    border-top: #EFC81A solid 7px;
+    width: 100%;
+  }
+  .gap-100px {
+    gap: 30px;
+  }
+}

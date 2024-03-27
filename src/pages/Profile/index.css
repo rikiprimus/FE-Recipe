@@ -1,0 +1,17 @@
+.profile-edit {
+  width: 200px;
+  height: auto;
+  margin-right: 15px;
+}
+.update-image {
+  cursor: pointer;
+  color: #2E266F;
+  font-weight: 500;
+  font-size: 22px;
+}
+.title-page {
+  color: #EFC81A;
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}

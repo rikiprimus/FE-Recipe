@@ -1,0 +1,22 @@
+.label-data {
+  color: #696F79;
+  font-weight: 500;
+  font-size: 16;
+  text-align: start !important;
+  margin-bottom: 10px;
+}
+.input-data {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  border: #8692A6 solid 1px;
+  border-radius: 5px;
+}
+.input-data:focus{
+  padding: 19px;
+  color: #383b3f;
+  border: 2px solid #EFC81A;
+  box-shadow: 2px 2px 10px 1px rgb(109, 114, 116);
+  border-radius: 5px; 
+  outline: none;
+}

@@ -1,0 +1,28 @@
+.button-y {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 20px 45px;
+  border-radius: 5px;
+}
+.button-y:hover {
+  box-shadow: 1px 1px 10px 1px rgb(109, 114, 116);
+}
+.button-y:active {
+  box-shadow: inset 1px 1px 10px 1px rgb(109, 114, 116);
+}
+
+
+@media (max-width: 768px) {
+  .button-y {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px 25px;
+    border-radius: 5px;
+  }
+  .button-y:hover {
+    box-shadow: 1px 1px 10px 1px rgb(109, 114, 116);
+  }
+  .button-y:active {
+    box-shadow: inset 1px 1px 10px 1px rgb(109, 114, 116);
+  }
+}

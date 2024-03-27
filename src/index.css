@@ -1,0 +1,52 @@
+:root {
+  font-family: 'Poppins', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.custom-container {
+  margin: 73px;
+  max-width: 1650px;
+}
+.section-gap {
+  margin-bottom: 180px !important;
+}
+a {
+  color: #EFC81A;
+}
+button {
+  background-color: #EFC81A;
+  color: #ffffff;
+  border: 0;
+}
+.link {
+  color: #EFC81A;
+  text-decoration: none;
+}
+
+.checkbox {
+  color: #383b3f;
+  opacity: 0.4;
+  margin-right: 15px;
+  font-size: 25px;
+}
+.checkbox-fill {
+  color: #EFC81A;
+  margin-right: 15px;
+  font-size: 25px;
+}
+.checkbox-text {
+  font-weight: 500;
+  color: #696F79;
+}
+
+
+@media (max-width: 768px) {
+  .custom-container {
+    margin: 40px;
+  }
+  .section-gap {
+    margin-bottom: 90px !important;
+  }
+}

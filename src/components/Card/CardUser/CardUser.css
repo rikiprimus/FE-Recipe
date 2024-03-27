@@ -1,0 +1,49 @@
+.border-left {
+  border-left: #EFC81A solid 5px;
+  width: auto;
+  height: 80px;
+  padding-right: 15px;
+}
+.image-user {
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+}
+.name-user {
+  color: #000000;
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0;
+  text-decoration: none;
+}
+.recipe {
+  color: #000000;
+  font-size: 21px;
+  font-weight: 900;
+  text-decoration: none;
+}
+.recipe:hover {
+  color: #2E266F;
+}
+.date {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+  .image-user {
+    width: 60px;
+    margin-right: 10px;
+  }
+  .name-user {
+    font-size: 20px;
+  }
+  .recipe {
+    font-size: 15px;
+  }
+  .date {
+    font-size: 15px;
+  }
+}

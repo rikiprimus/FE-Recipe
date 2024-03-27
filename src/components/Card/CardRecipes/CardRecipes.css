@@ -1,0 +1,50 @@
+.title-card {
+  color: #3F3A3A;
+  font-size: 40px;
+  font-weight: 700;
+  width: 300px;
+  text-decoration: none;
+}
+.desc-ingredient {
+  font-weight: 500;
+}
+.container-card {
+  width: 900px;
+}
+.image-detail {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+}
+.label-card {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  background-color: #EFC81A;
+}
+.createdby {
+  font-weight: 500;
+  font-size: 25px;
+}
+.image-profile {
+  font-family: 'Poppins', sans-serif;
+  color: #3F3A3A;
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .container-card {
+    width: 100%;
+  }
+  .image-detail {
+    width: 100%;
+    height: auto;
+  }
+  .createdby {
+    padding-top: 5px;
+  }
+}

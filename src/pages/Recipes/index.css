@@ -1,0 +1,117 @@
+.custom-file-upload {
+  display: inline-block;
+  width: 100%;
+  background-color: #F6F5F4;
+  color: #666666;
+  border-radius: 5px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 550px;
+  cursor: pointer;
+}
+.img-edit {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.img-detail {
+  width: 70%;
+  border-radius: 5px;
+}
+.img-profile {
+  width: 70px;
+  height: auto;
+  margin-right: 15px;
+}
+.file-edit {
+  width: auto;
+  background-color: #30C0F3;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 20px 100px;
+  cursor: pointer;
+  z-index: 1;
+}
+.button-file {
+  width: 100%;
+}
+.search-box {
+  width: 40%;
+}
+.line-full {
+  width: 100%;
+  border: #EFC81A solid 3px;
+}
+.form {
+  width: 1200px;
+  justify-content: center !important
+}
+.input-box-recipe {
+  background-color: #F6F5F4;
+  color: #B6B6B6;
+  width: 100%;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-right: 23px;
+  padding-left: 23px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.input-box-recipe:focus {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-right: 21px;
+  padding-left: 21px;
+  border: #c9c9c9 solid 2px;
+  color: #6b6b6b;
+}
+
+.category-box {
+  background-color: #F6F5F4;
+  color: #B6B6B6;
+  width: 20%;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-right: 23px;
+  padding-left: 23px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.category-box:focus {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-right: 21px;
+  padding-left: 21px;
+  border: #c9c9c9 solid 2px;
+  color: #6b6b6b;
+}
+
+.input-box-comment {
+  background-color: #F6F5F4;
+  color: #B6B6B6;
+  width: 100%;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  padding-right: 23px;
+  padding-left: 23px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.input-box-comment:focus {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-right: 21px;
+  padding-left: 21px;
+  border: #c9c9c9 solid 2px;
+  color: #6b6b6b;
+}
+
+
+@media (max-width: 768px) {
+  .search-box {
+    width: 100%;
+  }
+}
