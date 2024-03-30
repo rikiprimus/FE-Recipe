@@ -24,6 +24,9 @@
   margin-right: 15px;
 }
 .file-edit {
+  position: absolute;
+  top: 520;
+  left: 800;
   width: auto;
   background-color: #30C0F3;
   color: #ffffff;
@@ -87,7 +90,21 @@
   border: #c9c9c9 solid 2px;
   color: #6b6b6b;
 }
-
+.icon-button  {
+  color: #EFC81A;
+  padding: 10px;
+  border: #EFC81A solid 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.icon-button-active {
+  color: #ffffff;
+  background-color: #EFC81A;
+  padding: 10px;
+  border: #EFC81A solid 2px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .input-box-comment {
   background-color: #F6F5F4;
   color: #B6B6B6;
@@ -109,6 +126,11 @@
   color: #6b6b6b;
 }
 
+@media (max-width: 1440px) {
+  .search-box {
+    width: 70%;
+  }
+}
 
 @media (max-width: 768px) {
   .search-box {

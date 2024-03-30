@@ -15,7 +15,7 @@ const Landing = () => {
         isLoggedIn={isLoggedIn}
       />
       {/* section home start  */}
-      <div id="landing" className="container-fluid custom-container">
+      <div id="landing" className="container-fluid custom-container mb-5 mb-md-0">
         <div className="d-flex flex-column justify-content-between align-items-center flex-md-row">
           <CardTitle placeholder='search restaurant, food' />
           <img src={Image} alt="..." className="image-first" />

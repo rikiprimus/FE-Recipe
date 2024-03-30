@@ -41,6 +41,31 @@
   margin-right: 350px;
 }
 
+@media (max-width: 1440px) {
+  .subtitle {
+    margin-top: 20px;
+    font-size: 50px;
+  }
+  .description {
+    font-size: 20px;
+  }
+  .more {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 150px;
+    border-radius: 5px;
+  }
+  .image-home {
+    width: 500px;
+    margin-right: 190px;
+  }
+  .margin-home {
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-weight: 600px;

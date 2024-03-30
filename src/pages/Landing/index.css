@@ -30,6 +30,7 @@
   width: 25%;
   height: 700px;
   background-color: #EFC81A;
+  border-radius: 5px;
   opacity: 1;
   z-index: -1;
 }
@@ -51,25 +52,52 @@
   font-weight: bold
 }
 
+@media (max-width: 1440px) {
+  .image-first {
+    width: 500px; 
+  }
+  .background-yellow {
+    width: 30%;
+    height: 900px;
+  }
+  .background-img1 {
+    top: 1100px; 
+    left: 170px; 
+    width: 38%;
+    height: 500px;
+  }
+  .background-img2 {
+    position: absolute; 
+    top: 1780px; 
+    width: 20%;
+    height: 500px;
+  }
+  .image-title {
+    font-size: 35px; 
+    bottom: 10%; 
+    left: 10%; 
+  }
+}
+
 @media (max-width: 768px) {
   .image-first {
     width: 0; 
   }
   
   .background-yellow {
-    width: 100%; /* Sesuaikan ukuran latar belakang kuning */
-    height: 650px; /* Sesuaikan tinggi latar belakang kuning */
+    width: 100%; 
+    height: 450px;
   }
 
   .background-img1, .background-img2 {
-    width: 0; /* Sesuaikan lebar gambar 1 dan 2 */
-    left: 0; /* Geser gambar ke tengah */
-    top: 0; /* Sesuaikan posisi vertikal */
-    height: 0; /* Sesuaikan tinggi gambar 1 dan 2 */
+    width: 0;
+    left: 0; 
+    top: 0;
+    height: 0;
   }
   .image-title {
-    font-size: 5vw; /* Ukuran font responsif */
-    bottom: 10%; /* Sesuaikan posisi teks pada gambar */
-    left: 10%; /* Sesuaikan posisi teks pada gambar */
+    font-size: 5vw;
+    bottom: 10%; 
+    left: 10%;
   }
 }

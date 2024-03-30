@@ -33,6 +33,19 @@
   left: 39px;
 }
 
+@media (max-width: 1440px) {
+  .title-text {
+    font-size: 75px;
+  }
+  .input-box {
+    width: 100%;
+  }
+  .search-icon {
+    top: 27px;
+    left: 25px;
+  }
+}
+
 @media (max-width: 768px) {
   .title-text {
     margin-top: 50px;

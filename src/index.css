@@ -42,6 +42,16 @@ button {
 }
 
 
+@media (max-width: 1440px) {
+  .custom-container {
+    margin: 75px;
+    max-width: 1220px;
+  }
+  .section-gap {
+    margin-bottom: 90px !important;
+  }
+}
+
 @media (max-width: 768px) {
   .custom-container {
     margin: 40px;

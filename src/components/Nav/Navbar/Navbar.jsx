@@ -20,7 +20,7 @@ const Navbar = ({isLoggedIn}) => {
                 <img src={ImageProfile} className="image-profile" alt="..." />
               </Link>
               <div className="d-flex flex-column">
-                <p className="name-profile">Ayudia</p>
+                <Link to='/profile/edit' className="name-profile">Ayudia</Link>
                 <Link to='/logout' className='logout'>Logout</Link>
               </div>
             </div>

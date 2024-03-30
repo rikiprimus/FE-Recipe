@@ -26,7 +26,7 @@ const Search = () => {
       <Navbar isLoggedIn={isLoggedIn} />
       <div className="mt-5 mb-5" >
         <div className="search-box d-flex flex-column mb-5" >
-          <CardTitle />
+          <CardTitle placeholder='Search by title' />
           <div className="d-flex flex-row gap-2 align-items-center my-4">
             <ButtonCard text='New' className='button-y2' />
             <ButtonCard text='Popular' className='button-y2' />

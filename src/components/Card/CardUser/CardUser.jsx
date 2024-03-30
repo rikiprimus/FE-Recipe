@@ -8,12 +8,12 @@ const CardUser = ({image, name, totalRecipes, dateCreated, likes, comments}) => 
     <div className='d-flex flex-row justify-content-between'>
         <div className="d-flex flex-row align-items-center justify-content-center" >
           <div className="border-left"></div>
-          <Link to="/profile/detail">
-            <img src={image} className="image-user" alt="..." />
+          <Link to="/profile/edit">
+            <img src={image} className="image-user rounded-circle" alt="..." />
           </Link>
           <div className="d-flex flex-column ">
-            <p className="name-user">{name}</p>
-            <Link to='/profile/detail' className='recipe'>{totalRecipes} Recipes</Link>
+            <Link to="/profile/edit" className="name-user">{name}</Link>
+            <Link to="/profile/edit" className='recipe'>{totalRecipes} Recipes</Link>
           </div>
         </div>
         <div className='d-flex flex-column align-items-center justify-content-center'>

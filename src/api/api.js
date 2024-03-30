@@ -31,12 +31,14 @@ const postData = async (data) => {
 
     const response = await axios.post(`${apiUrl}/recipes`, bodyData);
     console.log(response)
-    return response.data; // Mengembalikan data yang diterima dari server (jika ada)
+    return response.data;
 
   } catch (error) {
-    throw error; // Melemparkan error ke pemanggil fungsi
+    throw error;
   }
 };
+
+
 
 const deleteRecipes = async (endpoint) => {
   try {

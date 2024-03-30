@@ -3,12 +3,23 @@ import { useParams } from 'react-router-dom'
 import { ImageProfile, ImageDetail } from '../../assets'
 import { Navbar, Footer, ButtonCard, CardUser } from '../../components'
 import { fetchRecipesById } from '../../api/api'
+import { BsBookmark } from "react-icons/bs";
+import { AiOutlineLike } from "react-icons/ai";
 
 const Detail = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const [bookmarked, setBookmarked] = useState(false);
+  const [liked, setLiked] = useState(false)
   const { id } = useParams()
   const [data, setData] = useState([]);
   const [dataI, setDataI] = useState([])
+
+  const toggleBookmark = () => {
+    setBookmarked(!bookmarked);
+  };
+  const toggleLiked = () => {
+    setLiked(!liked);
+  };
 
   useEffect(() => {
     const fetchDataBE = async () => {
@@ -41,9 +52,6 @@ const Detail = () => {
             comments='2 (static)'
           />
         </div>
-        {/* {data && (
-          
-          )} */}
         <div className="container-fluid d-flex flex-column">
           <div className="d-flex flex-column align-items-center">
             <h1 className="mb-5" style={{ color: "#2E266F", fontSize: 72 }}>
@@ -61,9 +69,17 @@ const Detail = () => {
               ))}
             </div>
           </div>
-
-          <div>
-            
+          <div className='d-flex flex-row gap-3 mb-4'>
+            {bookmarked? (
+              <BsBookmark size={55} className='icon-button' onClick={toggleBookmark} />
+              ) : (
+                <BsBookmark size={55} className='icon-button-active' onClick={toggleBookmark} />
+              )}
+            {liked? (
+              <AiOutlineLike size={55} className='icon-button' onClick={toggleLiked} />
+              ) : (
+                <AiOutlineLike size={55} className='icon-button-active' onClick={toggleLiked} />
+              )}
           </div>
 
           <div style={{ width: "100%" }}>
