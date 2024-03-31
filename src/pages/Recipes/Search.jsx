@@ -35,13 +35,10 @@ const Search = () => {
     }
     fetchDataBE()
   }, [page, search])
-
-  const onChangeSearch = (e) => {
-    setSearch(e.target.value)
-  }
   const handleSearch = (e) => {
     const inputSearch = searchInput.current.value;
     setSearch(inputSearch)
+    setPage(1)
   }
 
   const handlePrevious = () => {
