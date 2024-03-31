@@ -1,0 +1,12 @@
+.button-back {
+  background-color: #ffff;
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+.button-back-text  {
+  font-weight: 500;
+  font-size: 20px;
+  color: #EFC81A;
+}

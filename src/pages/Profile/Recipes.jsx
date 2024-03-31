@@ -7,21 +7,44 @@ import { useParams } from 'react-router-dom'
 
 const Recipes = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
-  const { id } = useParams
+  const { id } = useParams();
+  const [pagination, setPagination] = useState([]);
   const [data, setData] = useState([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchDataBE = async () => {
       try {
-        const result = await fetchRecipes('')
+        const params = {
+          search: '545f6b80-a0aa-4f24-9f82-f71dca1ca2eb', //ini
+          searchBy: 'users_id',
+          sort: 'ASC',
+          sortBy: 'createdAt',
+          limit: 5,
+          page: page//ini
+        }
+        const result = await fetchRecipes(params)
+        console.log(page)
         setData(result.data)
+        setPagination(result.pagination)
         console.log(result.data)
+        console.log(result.pagination)
       } catch (error) {
         console.error ('Error fetching data: ', error)
       }
     }
     fetchDataBE()
-  }, [])
+  }, [page])
+
+  const handlePrevious = () => {
+    setPage(page - 1)
+    window.scrollTo({ top: 340, behavior: 'smooth' });
+  }
+  const handleNext = () => {
+    setPage(page + 1)
+    window.scrollTo({ top: 340, behavior: 'smooth' });
+  }
   
   const deleteDataRecipes = async (id) => {
     try {
@@ -66,7 +89,7 @@ const Recipes = () => {
           ))}
           
         </div>
-        <Pagination />
+        <Pagination pagination={pagination} handleNext={handleNext} handlePrevious={handlePrevious} />
       </div>
       <Footer />
     </>

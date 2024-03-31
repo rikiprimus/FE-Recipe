@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 import './index.css'
-import { CardInput, Button, Checkbox } from '../../components'
+import { CardInput, Button, ButtonBack, Checkbox, PopRegister, PopLogout, PopDone } from '../../components'
 import { Link } from 'react-router-dom'
 
 const Register = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+  const handleOpen = () => {
+    event.preventDefault();
+    setIsOpen(!isOpen);
+  };
+  window.scrollTo(0, 0);
   return (
     <div className='container-fluid custom-container'>
+      <div>
+        <ButtonBack />
+      </div>
       <div className='d-flex flex-column justify-content-center align-items-center '>
         <h1 className='title-register mb-5'>Recipe...</h1>
         <div className="d-flex flex-column gap-3 mb-5 align-items-center">
@@ -37,11 +46,14 @@ const Register = () => {
           />
           <Checkbox checked={isChecked} onChange={handleCheckboxChange} className='mb-5'/>
         </div>
-        <Button text='Register Account'/>
+        <Button text='Register Account' onClick={handleOpen}/>
         <h6 className='text-alternative'>Already have account ? 
           <Link to='/login' className='link'> Log in Here</Link>
-          </h6>
+        </h6>
       </form>
+      {isOpen && (
+        <PopRegister onClick={handleOpen} />
+      )}
     </div>
   )
 }

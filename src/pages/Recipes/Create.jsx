@@ -49,7 +49,8 @@ const Create = () => {
 		console.log(e.target.files)
 	}
   console.log(inputData)
-
+  
+  window.scrollTo(0, 0);
   return (
     <>
     <div className='container-fluid custom-container'>

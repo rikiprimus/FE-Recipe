@@ -5,6 +5,7 @@ import { Navbar, NavProfile, CardUser, CardRecipes, Footer, Pagination } from '.
 
 const Bookmark = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
+  window.scrollTo(0, 0);
   return (
     <>
       <div className='container-fluid custom-container'>

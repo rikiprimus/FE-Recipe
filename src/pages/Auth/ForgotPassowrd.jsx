@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './index.css'
 import { CardInput, Button } from '../../components'
 import { Link } from 'react-router-dom'
+import ButtonBack from '../../components/Button/ButtonBack'
 
 const ForgotPassowrd = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -9,8 +10,10 @@ const ForgotPassowrd = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+  window.scrollTo(0, 0);
   return (
     <div className='container-fluid custom-container'>
+      <ButtonBack />
       <div className='d-flex flex-column justify-content-center align-items-center '>
         <h1 className='title-register mb-5'>Recipe...</h1>
         <div class="d-flex flex-column gap-3 mb-5 align-items-center">

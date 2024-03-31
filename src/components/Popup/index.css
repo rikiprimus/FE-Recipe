@@ -1,0 +1,30 @@
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 100px 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-title {
+  color: #EFC81A;
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.popup-desc {
+  color: #8692A6;
+  font-weight: 500;
+}
+
+.popup button {
+  margin-top: 10px;
+}

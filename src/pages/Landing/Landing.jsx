@@ -5,7 +5,7 @@ import { Navbar, NavProfile, CardHome, CardImage, CardTitle, Title, Footer } fro
 
 const Landing = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
-
+  window.scrollTo(0, 0);
   return (
     <>
       <div className='background-yellow'></div>

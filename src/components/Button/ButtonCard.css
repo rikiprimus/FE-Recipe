@@ -21,6 +21,20 @@
   border-radius: 5px;
   background-color: #00E092;
 }
+.button-grey {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  padding: 7px 45px;
+  border-radius: 5px;
+  padding: 20px 45px;
+  background-color: #E7E7E7;
+}
+.button-grey:hover {
+  box-shadow: 1px 1px 10px 1px rgb(109, 114, 116);
+}
+.button-grey:active {
+  box-shadow: inset 1px 1px 10px 1px rgb(109, 114, 116);
+}
 .button-o {
   font-family: 'Poppins', sans-serif;
   width: auto;

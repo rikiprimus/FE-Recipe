@@ -65,7 +65,7 @@ const Edit = () => {
 		console.log(e.target.files)
 	}
 
-
+  window.scrollTo(0, 0);
   return (
     <>
     <div className='container-fluid custom-container'>
@@ -75,11 +75,11 @@ const Edit = () => {
           <div className="form-group">
             {data.photo ? (
               <div>
-                <img src={data.photo} width={1200} height={700} />
+                <img src={data.photo} className='img-edit' />
                 <label
                   htmlFor="fileInput"
                   className="file-edit"
-                  style={{ position: "absolute", top: 520, left: 800, zIndex: 1 }}
+                  style={{ position: "absolute", top: 520, left: '50%', zIndex: 1 }}
                 >
                   Change Photo
                 </label>

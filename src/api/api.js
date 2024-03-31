@@ -2,9 +2,11 @@ import axios from 'axios';
 
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
-const fetchRecipes = async (endpoint) => {
+const fetchRecipes = async (params) => {
   try {
-    const response = await axios.get(`${apiUrl}/recipes${endpoint}`);
+    const response = await axios.get(`${apiUrl}/recipes`, {
+      params: params
+    });
     return response.data;
   } catch (error) {
     throw error;

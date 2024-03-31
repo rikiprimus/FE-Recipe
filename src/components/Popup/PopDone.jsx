@@ -1,27 +1,20 @@
 import React from 'react'
+import './index.css'
+import Button from "../Button/Button";
+import { Link } from 'react-router-dom';
 
-const PopDone = () => {
+const PopDone = ({onClick}) => {
   return (
     <>
-      {/* content pop-up Already start */}
-      <div id="myPopupalready" className="popup">
-        <div className="popup-content d-flex flex-column align-items-center gap-4">
-          <span className="close fs-2" onclick="myFunctionSet()">
-            ×
-          </span>
-          <h1 className="title mb-4">Account has been set up</h1>
-          <label>Account activated successfully, please login</label>
-          <a
-            className="submit text-center"
-            href="/Auth/Login.html"
-            value="OK"
-            style={{ width: "50%" }}
-          >
-            Ok
-          </a>
+      <div className="popup">
+        <div className="d-flex flex-column gap-4 popup-content">
+          <h2 className="popup-title">Account has been set up</h2>
+          <p className="popup-desc">Account activated successfully, please login</p>
+          <Link to='/login' >
+            <Button text="OK" />
+          </Link>
         </div>
       </div>
-      {/* content pop-up Already end */}
     </>
   )
 }

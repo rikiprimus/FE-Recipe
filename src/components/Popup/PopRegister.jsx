@@ -1,27 +1,19 @@
-import React from 'react'
+import React from "react";
+import './index.css'
+import Button from "../Button/Button";
 
-const PopRegister = () => {
+const PopRegister = ({onClick}) => {
   return (
     <>
-      {/* content pop-up Set start */}
-      <div id="myPopupset" className="popup">
-        <div className="popup-content d-flex flex-column align-items-center gap-4">
-          <span className="close fs-2" onclick="myFunctionSet()">
-            ×
-          </span>
-          <h1 className="title mb-4">You're all set</h1>
-          <label>Please check your email account for verification</label>
-          <input
-            type="submit"
-            onclick="myFunctionSet(); myFunctionAlready()"
-            defaultValue="OK"
-            style={{ width: "50%" }}
-          />
+      <div className="popup">
+        <div className="d-flex flex-column gap-4 popup-content">
+          <h2 className="popup-title">You're all set!</h2>
+          <p className="popup-desc">Please check your email account for verification</p>
+          <Button text="OK" onClick={onClick} />
         </div>
       </div>
-      {/* content pop-up Set end */}
     </>
-  )
-}
+  );
+};
 
-export default PopRegister
+export default PopRegister;

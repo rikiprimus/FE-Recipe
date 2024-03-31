@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './index.css'
-import { CardInput, Button } from '../../components'
+import { CardInput, Button, ButtonBack } from '../../components'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -9,8 +9,10 @@ const Login = () => {
   // const handleCheckboxChange = () => {
   //   setIsChecked(!isChecked);
   // };
+  window.scrollTo(0, 0);
   return (
     <div className='container-fluid custom-container'>
+      <ButtonBack />
       <div className='d-flex flex-column justify-content-center align-items-center '>
         <h1 className='title-register mb-5'>Recipe...</h1>
         <div className="d-flex flex-column gap-3 mb-5 align-items-center">
