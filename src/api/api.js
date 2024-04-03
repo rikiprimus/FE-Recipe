@@ -2,6 +2,26 @@ import axios from 'axios';
 
 const apiUrl = import.meta.env.VITE_BASE_URL;
 
+const fetchRecipesAndCommentsById = async (id) => {
+  try {
+    const [recipeResponse, commentsResponse] = await Promise.all([
+      axios.get(`${apiUrl}/recipes/${id}`),
+      axios.get(`${apiUrl}/comment/recipes/${id}`)
+    ]);
+
+    const recipeData = recipeResponse.data;
+    const commentsData = commentsResponse.data;
+
+    console.log('Recipes:', recipeData);
+    console.log('Comments:', commentsData);
+
+    return { recipeData, commentsData };
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 const fetchRecipes = async (params) => {
   try {
     const response = await axios.get(`${apiUrl}/recipes`, {
@@ -26,7 +46,6 @@ const postData = async (data) => {
   try {
     const bodyData = new FormData();
 
-    // Menambahkan setiap kunci-nilai dari objek data ke FormData
     Object.entries(data).forEach(([key, value]) => {
       bodyData.append(key, value);
     });
@@ -50,4 +69,4 @@ const deleteRecipes = async (endpoint) => {
   }
 };
 
-export { fetchRecipes, fetchRecipesById, postData, deleteRecipes };
+export { fetchRecipes, fetchRecipesById, postData, deleteRecipes, fetchRecipesAndCommentsById };

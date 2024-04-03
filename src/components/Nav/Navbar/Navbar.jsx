@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import './Navbar.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ImageProfile } from '../../../assets'
+import { useSelector } from 'react-redux'
 
-const Navbar = ({isLoggedIn}) => {
+const Navbar = ({}) => {
+  const navigate = useNavigate();
+  const authdata = useSelector((state) => state.login.data)
+  const logout = () => {
+    localStorage.clear()
+    navigate("/login"); 
+  };
+  console.log(authdata)
   return (
     <div>
-      {isLoggedIn ? (
+      {authdata ? (
         <div className='container-fluid custom-container'>
           <nav id="navbar" className="d-flex flex-row justify-content-between">
             <div className="d-flex flex-row gap-2 gap-md-5">
@@ -21,7 +29,7 @@ const Navbar = ({isLoggedIn}) => {
               </Link>
               <div className="d-flex flex-column">
                 <Link to='/profile/edit' className="name-profile">Ayudia</Link>
-                <Link to='/logout' className='logout'>Logout</Link>
+                <button className='logout' onClick={() => logout()}>Logout</button>
               </div>
             </div>
           </nav>

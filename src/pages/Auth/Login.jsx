@@ -1,14 +1,27 @@
 import React, { useState } from 'react'
 import './index.css'
 import { CardInput, Button, ButtonBack } from '../../components'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { authLogin } from "../../redux/action/auth"
+import { useDispatch, useSelector } from 'react-redux'
 
 const Login = () => {
-  // const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const authdata = useSelector((state) => state.login)
+  const [inputData, setInputData] = useState({
+    email:"",
+    password:""
+  })
+  const onChange = (e) => {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+  };
 
-  // const handleCheckboxChange = () => {
-  //   setIsChecked(!isChecked);
-  // };
+  const postData = (event) => {
+    event.preventDefault()
+    let data = inputData
+    dispatch(authLogin(data,navigate))
+  }
   window.scrollTo(0, 0);
   return (
     <div className='container-fluid custom-container'>
@@ -21,19 +34,29 @@ const Login = () => {
         </div>
       </div>
       <form className='container-fluid container-form'>
+        {authdata.isLoading ? 
+          <div className="alert alert-primary text-center">loading ...</div>
+        : null}
+        {authdata.isError ? 
+          <div className="alert alert-danger text-center">Login Failed : {authdata.ErrorMessage ?? "-"}</div>
+        : null}
         <div className='d-flex flex-column justify-content-center gap-2 mb-4'>
           <CardInput 
-            id='Email'
-            name='Email' 
+            id='email'
+            text="Email"
+            name='email' 
             placeholder='Email'
+            onChange={onChange}
           />
           <CardInput 
-            id='Password'
-            name='Password' 
+            id='password'
+            text="Email"
+            name='password' 
             placeholder='Password'
+            onChange={onChange}
           />
         </div>
-        <Button text='Login'/>
+        <Button text='Login' onClick={postData}/>
         <h6 className='text-alternative'>Forgot your Password ? 
           <Link to='/forgotpassword' className='link'> Click here</Link>
         </h6>

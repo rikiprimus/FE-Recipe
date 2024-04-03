@@ -6,8 +6,8 @@ const initialState = {
   ErrorMessage: null,
 };
 
-const menuReducers = (state = initialState, action) => {
-  if (action.type === "GET_MENU_PENDING") {
+const loginReducers = (state = initialState, action) => {
+  if (action.type === "POST_LOGIN_PENDING") {
     return {
       ...state,
       data: null,
@@ -16,7 +16,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: true,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_SUCCESS") {
+  } else if (action.type === "POST_LOGIN_SUCCESS") {
     return {
       ...state,
       data: action.payload,
@@ -25,7 +25,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: false,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_ERROR") {
+  } else if (action.type === "POST_LOGIN_ERROR") {
     return {
       ...state,
       data: null,
@@ -34,9 +34,18 @@ const menuReducers = (state = initialState, action) => {
       isLoading: false,
       ErrorMessage: action.payload,
     };
+  } else if (action.type === "POST_LOGOUT") {
+    return {
+      ...state,
+      data: null,
+      isError: false,
+      isSuccess: false,
+      isLoading: false,
+      ErrorMessage: null,
+    };
   } else {
     return state;
   }
 };
 
-export default menuReducers;
+export default loginReducers;

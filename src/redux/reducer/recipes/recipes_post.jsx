@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const menuReducers = (state = initialState, action) => {
-  if (action.type === "GET_MENU_PENDING") {
+  if (action.type === "POST_RECIPES_PENDING") {
     return {
       ...state,
       data: null,
@@ -16,7 +16,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: true,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_SUCCESS") {
+  } else if (action.type === "POST_RECIPES_SUCCESS") {
     return {
       ...state,
       data: action.payload,
@@ -25,7 +25,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: false,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_ERROR") {
+  } else if (action.type === "POST_RECIPES_ERROR") {
     return {
       ...state,
       data: null,

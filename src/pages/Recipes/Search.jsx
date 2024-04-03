@@ -1,41 +1,30 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { ImageRecipe, ImageProfile } from '../../assets'
-import { Navbar, Footer, Button, ButtonCard, CardTitle, CardRecipes, Pagination } from '../../components'
-import { fetchRecipes } from '../../api/api'
 import { BsSearch } from 'react-icons/bs'
+import { Navbar, Footer, Button, ButtonCard, CardTitle, CardRecipes, Pagination } from '../../components'
+// import { fetchRecipes } from '../../api/api'
+import { getRecipes } from '../../redux/action/recipes'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Search = () => {
+  const dispatch = useDispatch()
+  const base = useSelector((state) => state.recipes_get.data)
+  // const recipes = useSelector((state) => state.recipes)
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [pagination, setPagination] = useState([]);
-  const [search, setSearch] = useState('')
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState('')
   const [page, setPage] = useState(1);
   const searchInput = useRef(null);
 
   useEffect(() => {
-    const fetchDataBE = async () => {
-      try {
-        const params = {
-          search: search, //ini
-          searchBy: 'title',
-          sort: 'ASC',
-          sortBy: 'createdAt',
-          limit: 5,
-          page: page//ini
-        }
-        const result = await fetchRecipes(params)
-        console.log(page)
-        setData(result.data)
-        setPagination(result.pagination)
-        console.log(result.data)
-        console.log(result.pagination)
-      } catch (error) {
-        console.error ('Error fetching data: ', error)
-      }
-    }
-    fetchDataBE()
+    dispatch(getRecipes(page, search))
   }, [page, search])
-  const handleSearch = (e) => {
+  useEffect(() => {
+    setData(base.data);
+    setPagination(base.pagination);
+  }, [])
+
+  const handleSearch = () => {
     const inputSearch = searchInput.current.value;
     setSearch(inputSearch)
     setPage(1)
@@ -44,12 +33,18 @@ const Search = () => {
   const handlePrevious = () => {
     setPage(page - 1)
     window.scrollTo({ top: 550, behavior: 'smooth' });
+    console.log(page)
   }
   const handleNext = () => {
     setPage(page + 1)
     window.scrollTo({ top: 550, behavior: 'smooth' });
+    console.log(page)
   }
+  console.log("cek")
+  console.log(page )
 
+  // console.log(data)
+  // console.log(pagination)
   return (
     <>
       <div className='container-fluid custom-container'>
@@ -95,7 +90,36 @@ const Search = () => {
           ))}
           
         </div>
-        <Pagination pagination={pagination} handleNext={handleNext} handlePrevious={handlePrevious} />
+        {/* <Pagination pagination={pagination} handleNext={handleNext} handlePrevious={handlePrevious} /> */}
+        {pagination.total_data <= 5 ? (
+          <div className="d-flex flex-row gap-5 justify-content-center align-items-center mt-5">
+            <h3 className="pagination mb-0">
+              Show 1-5 from {pagination.total_data}
+            </h3>
+          </div>
+        ) : pagination.page_prev === 0 ? (
+          <div className="d-flex flex-row gap-5 justify-content-center align-items-center mt-5">
+            <h3 className="pagination mb-0">
+              Show 1-5 from {pagination.total_data}
+            </h3>
+            <Button text="Next" onClick={handleNext} />
+          </div>
+        ) : pagination.page_next === 0 ? (
+          <div className="d-flex flex-row gap-5 justify-content-center align-items-center mt-5">
+            <Button text="Previous" onClick={handlePrevious} />
+            <h3 className="pagination mb-0">
+              Show 1-5 from {pagination.total_data}
+            </h3>
+          </div>
+        ) : (
+          <div className="d-flex flex-row gap-5 justify-content-center align-items-center mt-5">
+            <Button text="Previous" onClick={handlePrevious} />
+            <h3 className="pagination mb-0">
+              Show 1-5 from {pagination.total_data}
+            </h3>
+            <Button text="Next" onClick={handleNext} />
+          </div>
+        )}
       </div>
     </div>
     <Footer />
