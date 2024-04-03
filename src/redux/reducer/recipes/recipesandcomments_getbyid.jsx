@@ -1,31 +1,34 @@
 const initialState = {
   data: null,
+  comments: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   ErrorMessage: null,
 };
 
-const postRecipesReducers = (state = initialState, action) => {
-  if (action.type === "POST_RECIPES_PENDING") {
+const recipeandcommentsGetByIdReducers = (state = initialState, action) => {
+  if (action.type === "GET_RECIPESANDCOMMENTSBYID_PENDING") {
     return {
       ...state,
       data: null,
+      comments: null,
       isError: false,
       isSuccess: false,
       isLoading: true,
       ErrorMessage: null,
     };
-  } else if (action.type === "POST_RECIPES_SUCCESS") {
+  } else if (action.type === "GET_RECIPESANDCOMMENTSBYID_SUCCESS") {
     return {
       ...state,
-      data: action.payload,
+      data: action.payload[0].data.data,
+      comments: action.payload[1].data.data,
       isError: false,
       isSuccess: true,
       isLoading: false,
       ErrorMessage: null,
     };
-  } else if (action.type === "POST_RECIPES_ERROR") {
+  } else if (action.type === "GET_RECIPESANDCOMMENTSBYID_ERROR") {
     return {
       ...state,
       data: null,
@@ -39,4 +42,4 @@ const postRecipesReducers = (state = initialState, action) => {
   }
 };
 
-export default postRecipesReducers;
+export default recipeandcommentsGetByIdReducers;

@@ -1,20 +1,28 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import { ImageProfile, ImageDetail } from '../../assets'
+// import { ImageProfile, ImageDetail } from '../../assets'
 import { Navbar, Footer, ButtonCard, CardUser } from '../../components'
-import { fetchRecipesAndCommentsById } from '../../api/api'
+// import { fetchRecipesAndCommentsById } from '../../api/api'
 import { BsBookmark } from "react-icons/bs";
 import { AiOutlineLike } from "react-icons/ai";
+import { getRecipesAndCommentsById } from "../../redux/action/recipes";
+import { useDispatch, useSelector } from "react-redux";
 
 const Detail = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const dispatch = useDispatch();
+  const recipeData  = useSelector((state) => state.recipesandcomments_getbyid.data);
+  const commentsData  = useSelector((state) => state.recipesandcomments_getbyid.comments);
   const [bookmarked, setBookmarked] = useState(false);
   const [liked, setLiked] = useState(false)
   const { id } = useParams()
   const [data, setData] = useState([]);
-  const [recipe, setRecipe] = useState([]);
-  const [comments, setComments] = useState([]);
-  const [dataI, setDataI] = useState([])
+
+  function formatDate(timestamp) {
+    const date = new Date(timestamp);
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('en-GB', options);
+  }
+  const date = formatDate(recipeData?.createdat)
 
   const toggleBookmark = () => {
     setBookmarked(!bookmarked);
@@ -24,43 +32,31 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    const fetchDataBE = async () => {
-      try {
-        const result = await fetchRecipesAndCommentsById(id)
-        setRecipe(result.recipeData.data)
-        setComments(result.commentsData.data)
-        const base = result.recipeData.data.ingredient
-        setData(base.split(', '))
-        console.log(data)
-      } catch (error) {
-        console.error ('Error fetching data: ', error)
-      }
-    }
-    fetchDataBE()
-    
+    dispatch(getRecipesAndCommentsById(id))
+    setData(recipeData?.ingredient.split(', '))
   }, [id])
-
+  
   window.scrollTo(0, 0);
   return (
     <>
       <div className='container-fluid custom-container'>
-        <Navbar isLoggedIn={isLoggedIn} />
+        <Navbar />
         <div className='mb-5'>
           <CardUser 
-            image={recipe.photo_profile}
-            name={recipe.name}
+            image={recipeData?.photo_profile}
+            name={recipeData?.name}
             totalRecipes='10 (static)'
-            dateCreated='10 November 2020 (static)'
+            dateCreated={date}
             likes='20 (static)'
-            comments='2 (static)'
+            comments={!commentsData? "0" : commentsData.length}
           />
         </div>
         <div className="container-fluid d-flex flex-column">
           <div className="d-flex flex-column align-items-center">
             <h1 className="mb-5" style={{ color: "#2E266F", fontSize: 72 }}>
-              {recipe.title}
+              {recipeData?.title}
             </h1>
-            <img src={recipe.photo} alt="" className="img-detail mb-5" />
+            <img src={recipeData?.photo} alt="" className="img-detail mb-5" />
           </div>
           <div>
             <h1 className="mb-3">Ingredients</h1>
@@ -87,9 +83,8 @@ const Detail = () => {
 
           <div style={{ width: "100%" }}>
             <div className="line-full mb-5" />
-            <div>static</div>
 
-            {comments.map((comments, index) => (
+            {commentsData?.map((comments, index) => (
               <div key={index} className="d-flex flex-row align-items-center mb-5">
                 <img src={comments.photo_profile} className="img-profile rounded-circle" alt="..." />
                 <div className="d-flex flex-column justify-content-center">
@@ -104,21 +99,10 @@ const Detail = () => {
                   {comments.fill_comment}
                 </p>
               </div>
-              ))}
+            ))}
 
 
-            <div className="d-flex flex-row align-items-center mb-5">
-              <img src={ImageProfile} className="img-profile" alt="..." />
-              <div className="d-flex flex-column justify-content-center">
-                <p className="row-1 name-profile poppins-medium pt-3">Ariel</p>
-                <p className="row-1 logout">20 Recipe</p>
-              </div>
-              <div
-                className="border-left"
-                style={{ marginLeft: 20, marginRight: 20 }}
-              />
-              <p className=" mt-3 fs-5">So simple and delicious!</p>
-            </div>
+            
             <div className="line-full mb-5" />
             <div className="d-flex flex-column mb-5" style={{width: '50%'}}>
               <textarea

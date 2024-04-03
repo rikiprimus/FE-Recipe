@@ -6,8 +6,8 @@ const initialState = {
   ErrorMessage: null,
 };
 
-const postRecipesReducers = (state = initialState, action) => {
-  if (action.type === "POST_RECIPES_PENDING") {
+const updateRecipesReducers = (state = initialState, action) => {
+  if (action.type === "UPDATE_RECIPES_PENDING") {
     return {
       ...state,
       data: null,
@@ -16,7 +16,7 @@ const postRecipesReducers = (state = initialState, action) => {
       isLoading: true,
       ErrorMessage: null,
     };
-  } else if (action.type === "POST_RECIPES_SUCCESS") {
+  } else if (action.type === "UPDATE_RECIPES_SUCCESS") {
     return {
       ...state,
       data: action.payload,
@@ -25,7 +25,7 @@ const postRecipesReducers = (state = initialState, action) => {
       isLoading: false,
       ErrorMessage: null,
     };
-  } else if (action.type === "POST_RECIPES_ERROR") {
+  } else if (action.type === "UPDATE_RECIPES_ERROR") {
     return {
       ...state,
       data: null,
@@ -39,4 +39,4 @@ const postRecipesReducers = (state = initialState, action) => {
   }
 };
 
-export default postRecipesReducers;
+export default updateRecipesReducers;

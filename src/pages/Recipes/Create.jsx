@@ -2,11 +2,16 @@ import React, { useState, useEffect } from 'react'
 import './index.css'
 import { Navbar, Footer, Button } from '../../components'
 import { useNavigate } from 'react-router-dom'
-import { postData } from '../../api/api'
+// import { postData } from '../../api/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { postRecipes } from '../../redux/action/recipes'
 
 const Create = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
+  const addData = useSelector((state) => state.recipes_post);
+  const token = useSelector((state) => state.login);
+  console.log(token)
   const [photo, setPhoto] = useState()
   const [inputData, setInputData] = useState({
     title: "",
@@ -19,26 +24,18 @@ const Create = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const data = {
-        title: inputData.title,
-        ingredient: inputData.ingredient,
-        photo: photo,
-        video: inputData.video,
-        category_id: inputData.category_id,
-        users_id: inputData.users_id
-      };
+    const data = {
+      title: inputData.title,
+      ingredient: inputData.ingredient,
+      photo: photo,
+      video: inputData.video,
+      category_id: inputData.category_id,
+      users_id: inputData.users_id
+    };
 
-      // Panggil fungsi postData dengan parameter yang diperlukan
-      const response = await postData(data);
-      console.log('Success:', response);
-      navigate("/recipes/search")
-      // Lakukan penanganan setelah permintaan berhasil disampaikan
-    } catch (error) {
-      console.error('Error:', error);
-      // Lakukan penanganan kesalahan jika permintaan gagal
-    }
+    dispatch(postRecipes(data, navigate))
   };
+
   const onChange = (e) => {
 		setInputData({...inputData,[e.target.name]:e.target.value})
     
@@ -48,13 +45,12 @@ const Create = () => {
 		e.target.files[0] && setInputData({...inputData, photo: URL.createObjectURL(e.target.files[0])})
 		console.log(e.target.files)
 	}
-  console.log(inputData)
   
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   return (
     <>
     <div className='container-fluid custom-container'>
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar />
       <div className="d-flex flex-column align-items-center my-5 " >
         <form className="form d-flex flex-column" onSubmit={handleFormSubmit}>
           <div className="form-group">

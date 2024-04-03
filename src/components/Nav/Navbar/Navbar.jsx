@@ -25,10 +25,10 @@ const Navbar = ({}) => {
             <div className="d-flex flex-row align-items-center justify-content-center" >
               <div className="border-left"></div>
               <Link to="/profile/recipes">
-                <img src={ImageProfile} className="image-profile" alt="..." />
+                <img src={authdata.data.photo_profile} className="image-profile" alt="..." />
               </Link>
               <div className="d-flex flex-column">
-                <Link to='/profile/edit' className="name-profile">Ayudia</Link>
+                <Link to='/profile/edit' className="name-profile">{authdata.data.name}</Link>
                 <button className='logout' onClick={() => logout()}>Logout</button>
               </div>
             </div>

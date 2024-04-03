@@ -18,9 +18,16 @@ const CardUser = ({image, name, totalRecipes, dateCreated, likes, comments}) => 
         </div>
         <div className='d-flex flex-column align-items-center justify-content-center'>
           <p className='date mt-3'>{dateCreated}</p>
-          {likes && comments && (
+          {likes && !comments ? (
+            <p className='date'>{likes} Likes - 0 Comments</p>
+          ) : comments && !likes ? (
+            <p className='date'>0 Likes - {comments} Comments</p>
+          ) : (
             <p className='date'>{likes} Likes - {comments} Comments</p>
           )}
+          {/* {likes && comments && (
+            <p className='date'>{likes} Likes - {comments} Comments</p>
+          )} */}
         </div>
       </div>
   )

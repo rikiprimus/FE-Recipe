@@ -12,8 +12,8 @@ const fetchRecipesAndCommentsById = async (id) => {
     const recipeData = recipeResponse.data;
     const commentsData = commentsResponse.data;
 
-    console.log('Recipes:', recipeData);
-    console.log('Comments:', commentsData);
+    // console.log('Recipes:', recipeData);
+    // console.log('Comments:', commentsData);
 
     return { recipeData, commentsData };
   } catch (error) {

@@ -1,5 +1,6 @@
 const initialState = {
   data: null,
+  pagination: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -11,6 +12,7 @@ const recipeGetReducers = (state = initialState, action) => {
     return {
       ...state,
       data: null,
+      pagination: null,
       isError: false,
       isSuccess: false,
       isLoading: true,
@@ -19,7 +21,8 @@ const recipeGetReducers = (state = initialState, action) => {
   } else if (action.type === "GET_RECIPES_SUCCESS") {
     return {
       ...state,
-      data: action.payload,
+      data: action.payload.data,
+      pagination: action.payload.pagination,
       isError: false,
       isSuccess: true,
       isLoading: false,
@@ -29,6 +32,7 @@ const recipeGetReducers = (state = initialState, action) => {
     return {
       ...state,
       data: null,
+      pagination: null,
       isError: true,
       isSuccess: false,
       isLoading: false,
