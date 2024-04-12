@@ -28,8 +28,8 @@ const Navbar = ({}) => {
                 <img src={authdata.data.photo_profile} className="image-profile" alt="..." />
               </Link>
               <div className="d-flex flex-column">
-                <Link to='/profile/edit' className="name-profile">{authdata.data.name}</Link>
-                <button className='logout' onClick={() => logout()}>Logout</button>
+                <Link to="/profile/edit" className="name-profile">{authdata.data.name}</Link>
+                <button className="logout" onClick={() => logout()}>Logout</button>
               </div>
             </div>
           </nav>
@@ -39,8 +39,8 @@ const Navbar = ({}) => {
         <header className='container-fluid custom-container'>
           <nav className='d-flex flex-row gap-5'>
             <Link to="/register" className='navbar nav-user fs-4'>Register</Link>
-            <a href='/login' className='navbar nav-user fs-4'>Login</a>
-            <a href='/recipes/search' className='navbar nav-user fs-4'>Search Menu</a>
+            <a href="/login" className='navbar nav-user fs-4'>Login</a>
+            <a href="/recipes/search" className='navbar nav-user fs-4'>Search Menu</a>
           </nav>
         </header>
       )}

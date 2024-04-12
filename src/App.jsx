@@ -104,7 +104,6 @@ function App() {
             </Auth>
           }
         />
-        <Route path="/" element={<Outlet />} />
       </Routes>
     </BrowserRouter>
   );
