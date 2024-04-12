@@ -39,8 +39,8 @@ const Navbar = ({}) => {
         <header className='container-fluid custom-container'>
           <nav className='d-flex flex-row gap-5'>
             <Link to="/register" className='navbar nav-user fs-4'>Register</Link>
-            <a href="/login" className='navbar nav-user fs-4'>Login</a>
-            <a href="/recipes/search" className='navbar nav-user fs-4'>Search Menu</a>
+            <Link href="/login" className='navbar nav-user fs-4'>Login</Link>
+            <Link href="/recipes/search" className='navbar nav-user fs-4'>Search Menu</Link>
           </nav>
         </header>
       )}
