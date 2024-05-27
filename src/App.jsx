@@ -15,6 +15,7 @@ import {
   Search,
 } from "./pages";
 import Auth from "./components/Auth";
+import ChangePassword from "./pages/Auth/ChangePassword";
 function App() {
   return (
     <BrowserRouter>
@@ -22,7 +23,8 @@ function App() {
         <Route path="/" exact element={<Landing />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/forgotpassword" element={<ForgotPassowrd />} />
+        <Route path="/forgot-password" element={<ForgotPassowrd />} />
+        <Route path="/change-password/:id" element={<ChangePassword />} />
         <Route path="/recipes/search" element={<Search />} />
         <Route
           path="/profile"

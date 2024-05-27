@@ -11,6 +11,7 @@ import {
 } from "../../components";
 import { getRecipes } from "../../redux/action/recipes";
 import { useDispatch, useSelector } from "react-redux";
+import Loading from "../../components/Loading/Loading";
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -84,7 +85,13 @@ const Search = () => {
 
           <div className="d-flex flex-column gap-5 ">
             {checkData.isLoading ? (
-              <div className="alert alert-primary text-center">loading ...</div>
+              <Loading 
+                type='bubbles'
+                color='#EFC81A'
+                height={120}
+                width={100}
+              />
+              // <div className="alert alert-primary text-center">loading ...</div>
             ) : checkData.isError ? (
               <div className="alert alert-danger text-center">
                 Loading Failed : {checkData.ErrorMessage ?? "-"}

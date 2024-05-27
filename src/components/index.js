@@ -3,7 +3,6 @@ import ButtonCard from "./Button/ButtonCard";
 import ButtonBack from "./Button/ButtonBack";
 import CardHome from "./Card/CardHome/CardHome";
 import CardImage from "./Card/CardImage/CardImage";
-import CardInput from "./Card/CardInput/CardInput";
 import CardRecipes from "./Card/CardRecipes/CardRecipes";
 import CardTitle from "./Card/CardTitle/CardTitle";
 import CardUser from "./Card/CardUser/CardUser";
@@ -17,8 +16,9 @@ import PopDone from "./Popup/PopDone";
 import PopRegister from "./Popup/PopRegister";
 import PopPassword from "./Popup/PopPassword";
 import PopLogout from "./Popup/PopLogout";
+import { InputPassword, CardInput } from "./Card/CardInput/CardInput";
 
-export { Button, ButtonCard, ButtonBack, CardHome, CardInput, CardImage, CardRecipes, CardTitle, CardUser, Checkbox, Title, Footer, NavProfile, Navbar, Pagination, PopDone, PopLogout, PopPassword, PopRegister }
+export { Button, ButtonCard, ButtonBack, CardHome, CardInput, CardImage, CardRecipes, CardTitle, CardUser, Checkbox, Title, Footer, NavProfile, Navbar, Pagination, PopDone, PopLogout, PopPassword, PopRegister, InputPassword }
 
 
 

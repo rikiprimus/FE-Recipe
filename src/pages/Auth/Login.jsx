@@ -50,7 +50,7 @@ const Login = () => {
           />
           <CardInput 
             id='password'
-            text="Email"
+            text="Password"
             name='password' 
             placeholder='Password'
             onChange={onChange}
@@ -58,7 +58,7 @@ const Login = () => {
         </div>
         <Button text='Login' onClick={postData}/>
         <h6 className='text-alternative'>Forgot your Password ? 
-          <Link to='/forgotpassword' className='link'> Click here</Link>
+          <Link to='/forgot-password' className='link'> Click here</Link>
         </h6>
         <h6 className='text-alternative margin-forlink'>Don't have an account ? 
           <Link to='/register' className='link'> Sign Up Here</Link>

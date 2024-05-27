@@ -6,8 +6,8 @@ const initialState = {
   ErrorMessage: null,
 };
 
-const menuReducers = (state = initialState, action) => {
-  if (action.type === "GET_MENU_PENDING") {
+const changepasswordReducers = (state = initialState, action) => {
+  if (action.type === "CHANGE_PASSWORD_REQUEST") {
     return {
       ...state,
       data: null,
@@ -16,7 +16,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: true,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_SUCCESS") {
+  } else if (action.type === "CHANGE_PASSWORD_SUCCESS") {
     return {
       ...state,
       data: action.payload,
@@ -25,7 +25,7 @@ const menuReducers = (state = initialState, action) => {
       isLoading: false,
       ErrorMessage: null,
     };
-  } else if (action.type === "GET_MENU_ERROR") {
+  } else if (action.type === "CHANGE_PASSWORD_ERROR") {
     return {
       ...state,
       data: null,
@@ -39,4 +39,4 @@ const menuReducers = (state = initialState, action) => {
   }
 };
 
-export default menuReducers;
+export default changepasswordReducers;
