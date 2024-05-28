@@ -16,6 +16,7 @@ import {
 } from "./pages";
 import Auth from "./components/Auth";
 import ChangePassword from "./pages/Auth/ChangePassword";
+import ComingSoon from "./pages/ComingSoon/comingSoon";
 function App() {
   return (
     <BrowserRouter>
@@ -63,6 +64,14 @@ function App() {
           element={
             <Auth>
               <Bookmark />
+            </Auth>
+          }
+        />
+        <Route
+          path="/profile/likes"
+          element={
+            <Auth>
+              <ComingSoon />
             </Auth>
           }
         />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './index.css'
-import { CardInput, Button, ButtonBack, Checkbox, PopRegister, PopLogout, PopDone } from '../../components'
+import { CardInput, Button, ButtonBack, Checkbox, PopRegister, PopLogout, PopDone, InputPassword } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { authRegister } from '../../redux/action/auth'
@@ -53,7 +53,7 @@ const Register = () => {
           <div className="alert alert-primary text-center">loading ...</div>
         : null}
         {authdata.isError ? 
-          <div className="alert alert-danger text-center">Login Failed : {authdata.ErrorMessage ?? "-"}</div>
+          <div className="alert alert-danger text-center">Loading Failed : {authdata.ErrorMessage ?? "-"}</div>
         : null}
         <div className='d-flex flex-column justify-content-center gap-2 mb-5'>
           <CardInput 
@@ -70,9 +70,8 @@ const Register = () => {
             placeholder='Email'
             onChange={onChange}
           />
-          <CardInput
-            text='Password'
-            id='password'
+          <InputPassword
+            text="Password"
             name='password' 
             placeholder='Password'
             onChange={onChange}

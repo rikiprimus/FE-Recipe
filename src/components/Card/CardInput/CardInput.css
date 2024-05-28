@@ -1,10 +1,11 @@
 .label-data {
   color: #696F79;
   font-weight: 500;
-  font-size: 16;
+  font-size: 16px;
   text-align: start !important;
   margin-bottom: 10px;
 }
+
 .input-data {
   width: 100%;
   height: auto;
@@ -12,11 +13,35 @@
   border: #8692A6 solid 1px;
   border-radius: 5px;
 }
-.input-data:focus{
+
+.input-data:focus {
   padding: 19px;
   color: #383b3f;
   border: 2px solid #EFC81A;
   box-shadow: 2px 2px 10px 1px rgb(109, 114, 116);
-  border-radius: 5px; 
+  border-radius: 5px;
+  outline: none;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.btn-password-toggle {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-password-toggle:focus {
   outline: none;
 }

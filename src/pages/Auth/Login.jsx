@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './index.css'
-import { CardInput, Button, ButtonBack } from '../../components'
+import { CardInput, Button, ButtonBack, InputPassword } from '../../components'
 import { Link, useNavigate } from 'react-router-dom'
 import { authLogin } from "../../redux/action/auth"
 import { useDispatch, useSelector } from 'react-redux'
@@ -38,18 +38,17 @@ const Login = () => {
           <div className="alert alert-primary text-center">loading ...</div>
         : null}
         {authdata.isError ? 
-          <div className="alert alert-danger text-center">Login Failed : {authdata.ErrorMessage ?? "-"}</div>
+          <div className="alert alert-danger text-center">Loading Failed : {authdata.ErrorMessage ?? "-"}</div>
         : null}
         <div className='d-flex flex-column justify-content-center gap-2 mb-4'>
           <CardInput 
-            id='email'
+            type="email"
             text="Email"
             name='email' 
             placeholder='Email'
             onChange={onChange}
           />
-          <CardInput 
-            id='password'
+          <InputPassword
             text="Password"
             name='password' 
             placeholder='Password'
