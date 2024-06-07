@@ -103,8 +103,8 @@ npm run dev
             <td>Register Page</td>
         </tr>
         <tr>
-            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717660203/SS%20angkasa%20app/evvmxybcefr1zzbe4wzd.png" alt="Login Page" width=100%></td>
-            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717660203/SS%20angkasa%20app/zu5nqzhrzbjbrnppidpm.png" alt="Register Page" width=100%/></td>
+            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670071/SS%20recipefree/evvmxybcefr1zzbe4wzd.png" alt="Login Page" width=100%></td>
+            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670071/SS%20recipefree/zu5nqzhrzbjbrnppidpm.png" alt="Register Page" width=100%/></td>
         </tr>
         <tr>
             <td>Forgot Password Page</td>
@@ -127,8 +127,8 @@ npm run dev
             <td>Change Password Page</td>
         </tr>
         <tr>
-            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670075/SS%20recipefree/kpup04hkpfyvstf69swx.png" alt="Hiring" width=100%></td>
-            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670075/SS%20recipefree/kb2gerpskmur3ebqlci9.png" alt="Chat" width=100%/></td>
+            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670075/SS%20recipefree/kpup04hkpfyvstf69swx.png" alt="Change Profile" width=100%></td>
+            <td><image src="https://res.cloudinary.com/da1ilmcj9/image/upload/v1717670075/SS%20recipefree/kb2gerpskmur3ebqlci9.png" alt="Change Password" width=100%/></td>
         </tr>
     </table>  
 </p>
