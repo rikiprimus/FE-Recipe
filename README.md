@@ -135,7 +135,7 @@ npm run dev
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Contributing
+# Contributing
 
 Contributions that make the open source community the best place to learn and create. Every contribution you make is valuable.
 
@@ -147,10 +147,19 @@ Contributions that make the open source community the best place to learn and cr
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Related Project
+# Related Project
 
-- [`Recipefree Web Demo`](https://fe-recipe-rho.vercel.app/)
-- [`Recipefree Web Frontend Repository`](https://github.com/rikiprimus/FE-Recipes)
-- [`Recipefree Web Backend Repository`](https://github.com/rikiprimus/BE-Recipes)
+- [`FE Recipefree Web Demo`](https://fe-recipe-rho.vercel.app/)
+- [`FE Recipefree Web Frontend Repository`](https://github.com/rikiprimus/FE-Recipes)
+- [`BE Recipefree Web Backend Repository`](https://github.com/rikiprimus/BE-Recipes)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+# Contact
+
+Contributors names and contact info
+
+* AUTHOR
+  * Ricky Primus Saputra [@RickyPrimusSaputra](https://github.com/rikiprimus)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
