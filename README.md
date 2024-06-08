@@ -7,9 +7,9 @@
   <h3 align="center">Recipefree</h3>
 
   <p align="center">
-    <a href="https://github.com/rikiprimus/angkasa-app/issues">Report Bug</a>
+    <a href="https://github.com/rikiprimus/fe-recipes/issues">Report Bug</a>
     ·
-    <a href="https://github.com/rikiprimus/angkasa-app/issues">Feature Request</a>
+    <a href="https://github.com/rikiprimus/fe-recipes/issues">Feature Request</a>
   </p>
 </div>
 
@@ -69,7 +69,7 @@ Before going to the installation stage there are some software that must be inst
 - Clone the repo
 
 ```sh
-git clone https://github.com/rikiprimus/recipe-app.git
+git clone https://github.com/rikiprimus/fe-recipes.git
 
 ```
 
