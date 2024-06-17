@@ -42,7 +42,7 @@
 
 ## About The Project
 
-**RecipeFree** RecipeFree is a web platform that allows users to share and discover various food recipes. The site provides a community-driven space where users can easily upload their own recipes and explore those shared by others.
+**RecipeFree** is a web platform that allows users to share and discover various food recipes. The site provides a community-driven space where users can easily upload their own recipes and explore those shared by others.
 
 ### Built With
 
